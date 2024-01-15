@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "isotope-masonry-horizontal": "^2.0.1",
+    "jquery": "^3.6.3",
+    "jquery-match-height": "^0.7.2"
+  }
+}

@@ -1,0 +1,117 @@
+//font family
+$font_primary: 'Clash Display', sans-serif;
+$font_secondary: 'Lucette', sans-serif;
+
+//font weight
+$bold: 700;
+$semi_bold: 600;
+$medium: 500;
+$regular: 400;
+$light: 300;
+$extra_light: 200;
+
+//color
+$black: #000000;
+$white: #ffffff;
+$black_primary: #161615;
+$orange_primary: #FF581A;
+
+//theme color class
+$theme_colors: (
+  "black": $black,
+  "white": $white,
+  "black-primary": $black_primary,
+  "orange-primary": $orange_primary,
+);
+
+// font-familly
+$font_familly: (
+  "font-primary": $font_primary,
+  "font-secondary": $font_secondary,
+);
+
+//font-weight
+$font_weight: (
+  "bold": $bold,
+  "semi-bold": $semi_bold,
+  "medium": $medium,
+  "regular": $regular,
+  "light": $light,
+  "extra-light": $extra_light,
+);
+
+//max value
+$max_value: (
+  "none": none,
+  "100": 100px,
+  "300": 300px,
+  "322": 322px,
+  "390": 390px,
+  "418": 418px,
+  "490": 490px,
+  "535": 535px,
+  "684": 684px,
+);
+
+//z-index
+$line_height: (
+  "1": 1,
+  "1_2": 1.2,
+  "1_3": 1.3,
+  "1_4": 1.4,
+  "1_5": 1.5,
+);
+
+//z-index
+$z_index: (
+  "-1": -1,
+  "0": 0,
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4,
+  "5": 5,
+);
+
+//grid breakpoint bootstrap
+$grid-breakpoints: (
+  xs: 0,
+  xs_375: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl_1366: 1366px,
+  xxl: 1400px,
+);
+
+$spacing: (
+  "0": 0px,
+  "10": 10px,
+  "20": 20px,
+  "50": 50px,
+  "60": 60px,
+  "100": 100px,
+  "115": 115px,
+  "120": 120px,
+);
+
+$sides-direction: (
+  "t": top,
+  "b": bottom,
+  "s": left,
+  "e": right,
+);
+
+//bs breakpoint  custom gutter
+$bs-breakpoints: (
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$header_height: 49px;
+$header_height_md: 96px;
+
+$footer_width_md: 135px;

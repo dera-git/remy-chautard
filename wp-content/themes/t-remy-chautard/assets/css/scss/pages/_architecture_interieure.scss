@@ -1,0 +1,147 @@
+.kl-block-grid{
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    @include media-breakpoint-up(md){
+        margin-right: 30px;
+    }
+    @include media-breakpoint-down(md){
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.kl-g-grid{
+    padding: 10px;
+}
+.kl-g-row-grid{
+    margin: -10px;
+}
+
+.kl-grid-img{
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    @include media-breakpoint-down(md){
+        flex-direction: column;
+    }
+    & + .kl-grid-img{
+        margin-left: 20px;
+        @include media-breakpoint-down(md){
+            margin-left: 0;
+        }
+    }
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        @include media-breakpoint-down(md){
+            max-height: 500px;
+        }
+    }
+}
+.kl-grid-item{
+    flex: 0 0 auto;
+    height: 100%;
+    & + .kl-grid-item{
+        margin-left: 20px;
+        @include media-breakpoint-down(md){
+            margin-left: 0;
+        }
+    }
+}
+
+.kl-grid-item-w-940{
+    width: 940px;
+    @include media-breakpoint-down(xxl){
+        width: 650px;
+    }
+}
+.kl-grid-item-w-684{
+    width: 684px;
+    @include media-breakpoint-down(xxl){
+        width: 575px;
+    }
+}
+.kl-grid-item-w-535{
+    width: 535px;
+    @include media-breakpoint-down(xxl){
+        width: 395px;
+    }
+}
+.kl-grid-item-w-430{
+    width: 430px;
+    @include media-breakpoint-down(xxl){
+        width: 320px;
+    }
+}
+.kl-grid-item-w-510{
+    width: 510px;
+    @include media-breakpoint-down(xxl){
+        width: 400px;
+    }
+}
+.kl-grid-item-w-670{
+    width: 670px;
+    @include media-breakpoint-down(xxl){
+        width: 510px;
+    }
+}
+.kl-grid-item-w-772{
+    width: 772px;
+    @include media-breakpoint-down(xxl){
+        width: 500px;
+    }
+}
+.kl-flex-50{
+    width: 50%;
+    @include media-breakpoint-down(md){
+        width: 100%;
+    }
+}
+
+.kl-height-66{
+    height: 66.6666%;
+}
+.kl-height-63{
+    height: 63%;
+}
+.kl-height-60{
+    height: 60%;
+}
+.kl-height-50{
+    height: 50%;
+}
+.kl-height-40{
+    height: 40%;
+}
+.kl-height-37{
+    height: 37%;
+}
+.kl-height-33{
+    height: 33.33333%;
+}
+.kl-height-auto{
+    @include media-breakpoint-down(md){
+        height: auto;
+    }
+}
+
+.kl-flex-grow-1{
+    flex-grow: 1;
+}
+
+.kl-w-mob-100{
+    @include media-breakpoint-down(md){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.kl-content-img-single{
+    p{
+        display: none;
+    }
+}

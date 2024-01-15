@@ -1,0 +1,114 @@
+//bg color
+@mixin bg_variant($bg) {
+  background-color: $bg !important;
+}
+
+//color
+@mixin color_variant($color) {
+  color: $color !important;
+}
+
+//font-weight
+@mixin font_familly($value) {
+  font-family: $value !important;
+}
+
+//font-weight
+@mixin font_weight($value) {
+  font-weight: $value !important;
+}
+
+//line-height
+@mixin line_height($val) {
+  line-height: $val !important;
+}
+
+//z-index
+@mixin z_index($val) {
+  z-index: $val !important;
+}
+
+//button variant
+@mixin button_variant($bg, $color) {
+
+}
+
+@mixin button_semi_bordered($color){
+  color: $color;
+  &:after{
+    background: $color;
+  }
+  &:hover{
+    color: $color;
+  }
+}
+
+@mixin text_100 {
+  font-size: 50px;
+  line-height: 0.9em;
+  @include media-breakpoint-up(md) {
+    font-size: 65px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 70px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 100px;
+  }
+}
+
+@mixin text_40 {
+  font-size: 20px;
+  line-height: 1.2em;
+  @include media-breakpoint-up(md) {
+    font-size: 30px;
+  }
+  @include media-breakpoint-up(xxl) {
+    font-size: 40px;
+  }
+}
+
+@mixin text_20 {
+  font-size: 15px;
+  line-height: 1.563em;
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+  }
+}
+
+@mixin text_18 {
+  font-size: 13px;
+  line-height: 1.4em;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+  @include media-breakpoint-up(xl) {
+    font-size: 18px;
+  }
+}
+
+@mixin text_16 {
+  font-size: 14px;
+  line-height: 1em;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}
+
+@mixin text_14 {
+  font-size: 14px;
+  line-height: 1.2em;
+}
+
+@mixin text_13 {
+  font-size: 11px;
+  line-height: 1.2em;
+  @include media-breakpoint-up(md) {
+    font-size: 13px;
+  }
+}
+
+@mixin text_12 {
+  font-size: 12px;
+  line-height: 1.2em;
+}

@@ -1,0 +1,9 @@
+.kl-btn {
+    
+}
+
+@each $color, $value in $theme_colors {
+    .kl-btn-#{$color} {
+      @include button_variant($value, $white);
+    }
+}

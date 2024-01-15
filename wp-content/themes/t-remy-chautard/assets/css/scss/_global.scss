@@ -1,0 +1,288 @@
+body {
+  font-family: $font_primary;
+  &.kl-menu-is-show {
+    overflow: hidden;
+  }
+}
+
+button{
+  &:focus{
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+p, ul, h1, h2, h3, h4, h5, h6{
+  margin-bottom: 0;
+}
+
+ul{
+  padding-left: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+//bg & color
+@each $color, $value in $theme_colors {
+  .kl-bg-#{$color} {
+    @include bg_variant($value);
+  }
+  .kl-color-#{$color} {
+    @include color_variant($value);
+  }
+  .kl-link-semi-bordered.kl-link-#{$color}{
+    @include button_semi_bordered($value);
+  }
+}
+
+//font familly
+@each $name, $value in $font_familly {
+  .kl-ff-#{$name} {
+    @include font_familly($value);
+  }
+}
+
+//font weight
+@each $name, $value in $font_weight {
+  .kl-fw-#{$name} {
+    @include font_weight($value);
+    h1, h2, h3, h4, h5, h6 {
+      @include font_weight($value);
+    }
+  }
+}
+
+//z-index
+@each $val, $value in $line_height {
+  .kl-lh-#{$val} {
+    @include line_height($value);
+  }
+}
+
+//z-index
+@each $val, $value in $z_index {
+  .kl-z-index-#{$val} {
+    @include z_index($value);
+  }
+}
+
+//max-width , space margin padding and gutter breakpoint
+@each $space, $value_space in $max_value{
+  .kl-max-w-#{$space}{
+    max-width: #{$value_space};
+  }
+  .kl-min-w-#{$space}{
+    min-width: #{$value_space};
+  }
+}
+
+@each $space, $value_space in $spacing{
+  .kl-gx-#{$space}{
+    --bs-gutter-x: #{$value_space};
+  }
+  .kl-gy-#{$space}{
+    --bs-gutter-y: #{$value_space};
+  }
+  @each $side_value, $side_values in $sides-direction{
+    .kl-m#{$side_value}-#{$space}{
+      margin-#{$side_values}:#{$value_space} !important;
+    }
+    .kl-m#{$side_value}-n-#{$space}{
+      margin-#{$side_values}: -#{$value_space} !important;
+    }
+    .kl-p#{$side_value}-#{$space}{
+      padding-#{$side_values}: #{$value_space} !important;
+    }
+  }
+}
+
+//max-width , space margin padding and gutter breakpoint
+@each $breakpoint in map-keys($bs-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $space, $value_space in $max_value{
+      .kl-max-w-#{$breakpoint}-#{$space}{
+        max-width: #{$value_space};
+      }
+    }
+    @each $space, $value_space in $spacing{
+      .kl-gx-#{$breakpoint}-#{$space}{
+        --bs-gutter-x: #{$value_space};
+      }
+      .kl-gy-#{$breakpoint}-#{$space}{
+        --bs-gutter-y: #{$value_space};
+      }
+      @each $side_value, $side_values in $sides-direction{
+        .kl-m#{$side_value}-#{$breakpoint}-#{$space}{
+          margin-#{$side_values}: #{$value_space} !important;
+        }
+        .kl-p#{$side_value}-#{$breakpoint}-#{$space}{
+          padding-#{$side_values}: #{$value_space} !important;
+        }
+      }
+    }
+  }
+}
+
+// container
+@include media-breakpoint-up(xl){
+  .kl-container-xl-1140{
+    max-width: 1140px;
+  }
+}
+
+.kl-breadcrumb-line {
+  background-color: $orange_primary;
+  opacity: 1;
+  border: none;
+  margin: 0;
+  height: 8px;
+  position: fixed;
+  bottom: 0;
+  left: $header_height_md;
+  right: 0;
+  z-index: 1019;
+  .kl-breadcrumb-line-progress {
+    background-color: $black_primary;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 8px;
+    width: 8px;
+    transition: width .8s ease-out;
+  }
+}
+
+
+//structure swiper page
+.kl-swiper-container {
+  padding-top: $header_height;
+  @include media-breakpoint-up(md) {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 0;
+    padding-left: $header_height_md;
+  }
+  .swiper-wrapper {
+    flex-direction: column;
+    min-height: calc(100vh - #{$header_height});
+    transition-duration: 0.8s !important;
+    //Ease-out for scrolling, big difference when changed
+    transition-timing-function: ease-out;
+    @include media-breakpoint-up(md) {
+      min-height: 0;
+      height: 100vh;
+      flex-direction: row;
+    }
+    > .kl-scroll {
+      position: absolute;
+      left: 130px;
+      bottom: 38px;
+      z-index: 5;
+    }
+  }
+  .swiper-slide {
+    height: auto;
+    > .kl-container-fluid {
+      padding: 0 15px;
+    }
+    @include media-breakpoint-up(md) {
+      height: 100%;
+      width: auto;
+      > .kl-container-fluid {
+        display: flex;
+        align-items: center;
+        padding: 24px 0;
+        height: 100%;
+        @media (min-height: 768px) {
+          padding-top: 44px;
+          padding-bottom: 43px;
+        }
+      }
+    }
+  }
+}
+
+.kl-scroll {
+  text-align: center;
+  span {
+    color: $orange_primary;
+    display: block;
+    margin-top: 5px;
+  }
+}
+.kl-scroll-arrow {
+  animation: animScroll .35s ease-in alternate infinite;
+}
+
+@keyframes animScroll {
+  0% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.kl-max-w-540-mobile {
+  @include media-breakpoint-down(md) {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.kl-link-semi-bordered{  
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 3.2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 9px;
+  color: $black_primary;
+  text-decoration: none;
+  &:hover{
+    color: $black_primary;
+    &:after{
+      width: 100%;
+    }
+  }
+  &:after{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background: $black_primary;
+    width: 50%;
+    height: 1px;
+    transition: all ease 0.2s;
+  }
+  @include media-breakpoint-down(md){
+    font-size: 14px;
+    letter-spacing: 2.8px;
+    padding-bottom: 10.5px;
+    &:after{
+      width: 100%;
+    }
+  }
+}
+
+.kl-mt-paragraph{
+  p + p{
+    margin-top: 26px;
+    @include media-breakpoint-down(xxl){
+      margin-top: 10px;
+    }
+  }
+}
+.kl-letter-spacing-05{
+  span, p, h1, h2, h3, h4, h5, h6{
+    letter-spacing: .5px;
+  }
+}

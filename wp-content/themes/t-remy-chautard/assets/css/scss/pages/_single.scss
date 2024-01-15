@@ -1,0 +1,128 @@
+.kl-section-img-article{
+  @include media-breakpoint-up(md){
+    padding-left: 43px;
+  }
+  @include media-breakpoint-down(md){
+    padding-top: 40px;
+    padding-bottom: 30px;
+    .kl-article-wrapper{
+      margin-top: -30px;
+      & > *{
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+.kl-reset-scroll-wrapper{
+  .kl-scroll{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: inline-block;
+    @include media-breakpoint-down(md){
+      display: none;
+    }
+  }
+}
+
+.kl-title-exerpt-article{
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kl-article-wrapper{
+  .kl-description-article{
+    @include text_18;
+    p{
+      @include text_18;
+      & + p{
+        margin-top: 20px;
+      }
+    }
+  }
+  @include media-breakpoint-between(md, xl){
+    .kl-img-full-article{
+      width: 576px;
+    }
+  }
+  @include media-breakpoint-up(xl){
+    .kl-img-full-article{
+      width: 857px;
+    }
+  }
+  @include media-breakpoint-up(md){
+    @media (max-height: 800px) {
+      .kl-img-full-article{
+        width: 600px;
+      }
+    }
+    & > * {
+      flex: 0 0 auto;
+    }
+    .kl-content-title-article{
+      width: 426px;
+      margin: 0 60px 0 65px;
+    }
+  }
+}
+
+.kl-wrapper-column-text{
+  & > *:not(br){
+    margin: 0 0 20px;
+  }
+  @include media-breakpoint-up(md){
+    height: 57vh;
+    max-height: 57vh;
+    align-self: flex-end;
+    text-align: justify;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+    column-fill: auto;
+    overflow: hidden;
+    //height: auto;
+    & > *:not(br){
+      width: 558px;
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.kl-content-title-article{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.kl-texte{
+  div{
+    height: 50vh;
+    flex: 0 0 auto;
+    border: 1px solid red;
+    margin: 0 20px;
+  }
+}
+
+.kl-card-img-modele{
+  .kl-img-empty{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba($black_primary, 0.1);
+  }
+}
+
+.kl-section-intro-page-small{
+  @include media-breakpoint-down(md){
+    padding: 50px 0;
+  }
+}

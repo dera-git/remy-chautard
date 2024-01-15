@@ -1,0 +1,45 @@
+.kl-text-100 {
+  @include text_100();
+  h1, h2{
+    @include text_100();
+  }
+}
+
+.kl-text-40 {
+  h1, h2, h3{
+    @include text_40();
+  }
+  @include text_40();
+}
+
+.kl-text-20 {
+  @include text_20();
+}
+
+.kl-text-18 {
+  @include text_18();
+}
+
+.kl-text-16 {
+  @include text_16();
+  h4, h5, h6, p{
+    @include text_16();
+  }
+}
+
+.kl-text-14 {
+  @include text_14();
+}
+
+.kl-text-13 {
+  @include text_13();
+}
+
+.kl-text-12 {
+  @include text_12();
+}
+
+.kl-title-page,
+.kl-title-section {
+  font-family: $font_secondary;
+}

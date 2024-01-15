@@ -1,0 +1,134 @@
+.kl-footer {
+  margin-top: auto;
+  padding: 25px 22px;
+  @include media-breakpoint-up(md) {
+    margin-left: auto;
+    margin-top: 0;
+    padding: 0;
+    width: $footer_width_md !important;
+  }
+  &.kl-footer-black {
+    background-color: $black_primary;
+  }
+}
+.kl-footer-content {
+  @include media-breakpoint-up(md) {
+    padding: 0 12px;
+    position: absolute;
+    right: 35px;
+    bottom: 100%;
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
+    width: 100vh;
+    z-index: 2;
+    > .container-fluid {
+      display: flex;
+      align-items: flex-end;
+    }
+    @media (min-height: 768px) {
+      padding: 0 42px;
+    }
+  }
+}
+
+.kl-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 11px;
+  @include media-breakpoint-up(md) {
+    .kl-footer & {
+      display: block;
+      margin-left: auto;
+      transform: translate(-16px, 28px) rotate(90deg);
+    }
+  }
+  li {
+    margin: 0 11px 11px 0;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include media-breakpoint-up(md) {
+      .kl-footer & {
+        margin-right: 0;
+      }
+    }
+  }
+  a {
+    display: inline-block;
+    svg path {
+      transition: fill .15s ease-in-out;;
+    }
+    &:hover {
+      svg path {
+        fill: $orange_primary;
+      }
+    }
+    // .kl-footer & {
+    //   transition: transform .15s ease-in-out;      
+    //   &:hover {
+    //     transform: scale(1.2);
+    //   }
+    // }
+  }
+}
+.kl-footer-infos {
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+}
+.kl-footer-brand {
+  margin-right: 34px;
+  margin-left: -18px;
+  transform: rotate(90deg);
+  img {
+    width: 40px;
+    height: 35px;
+  }
+}
+.kl-footer-infos-content {
+  color: $black_primary;
+  font-size: 13px;
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+    padding-right: 36px;
+    @media(max-height: 725px) {
+      font-size: 14px;
+    }
+    @media(max-height: 575.98px) {
+      font-size: 13px;
+    }
+  }
+  .kl-footer-black & {
+    color: $white;
+  }
+}
+.kl-policy-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: -5px;
+  li {
+    margin: 5px 15px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    color: $black_primary;
+    text-decoration: none;
+    transition: color .15s ease-in-out;
+    &:hover {
+      color: $orange_primary;
+    }
+    .kl-footer-black & {
+      color: $white;
+      &:hover {
+        color: $orange_primary;
+      }
+    }
+  }
+}

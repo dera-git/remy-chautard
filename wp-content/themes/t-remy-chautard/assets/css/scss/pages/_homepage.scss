@@ -1,0 +1,244 @@
+.kl-intro-home-logo {
+  max-width: 224px;
+  padding: 60px 0 44px;
+  margin: 0 auto;
+  + .kl-intro-home-list {
+    margin-top: -18px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: none;
+    margin: 0;
+    transform: translateX(100px);
+    position: relative;
+    z-index: 2;
+    + .kl-intro-home-list {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+}
+.kl-intro-home-list {
+  @include media-breakpoint-up(md) {
+    padding-left: 215px;
+    margin-top: 0;
+    display: flex;
+    height: 100%;
+  }
+}
+.kl-intro-home-item {
+  position: relative;
+  height: 486px;
+  margin-top: 18px;
+  z-index: 1;
+  @include media-breakpoint-up(md) {
+    width: 375px;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 37px;
+    @media(min-height: 576px) {
+      width: 450px;
+    }
+    @media(min-height: 768px) {
+      width: 539px;
+    }
+  }
+  &:hover {
+    &::before {
+      opacity: 0.4;
+    }
+    .kl-intro-home-item-title {
+      opacity: 1;
+    }
+  }
+  &::before {
+    content: "";
+    background-color: $black;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in-out;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      opacity: 0;
+    }
+  }
+}
+.kl-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kl-intro-home-item-title {
+  color: $white;
+  font-size: 15px;
+  font-weight: $regular;
+  line-height: 1.06;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  bottom: 15px;
+  text-align: center;
+  transition: opacity .3s ease-in-out;
+  text-transform: uppercase;
+  z-index: 2;
+  @include media-breakpoint-up(md) {
+    opacity: 0;
+    font-size: 18px;
+    letter-spacing: 3.6px;
+    right: 36px;
+    left: 36px;
+    bottom: 30px;
+    text-align: right;
+  }
+}
+
+.kl-section-presentation {
+  padding: 50px 0 45px;
+  @include media-breakpoint-up(md) {
+    padding: 0 164px 0 127px;
+  }
+}
+.kl-presentation-content {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+  }
+}
+.kl-presentation-title {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  .kl-title-section {
+    span {
+      display: none;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    text-align: left;
+    margin-right: -130px;
+    .kl-title-section {
+      width: 176px;
+      span {
+        display: inline-block;
+      }
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-right: -160px;
+    .kl-title-section {
+      width: 240px;
+      @media(max-height: 768.98px) {
+        width: 230px;
+        font-size: 85px;
+        h1, h2 {
+          font-size: 85px;
+        }
+      }
+      @media(max-height: 575.98px) {
+        width: 180px;
+        font-size: 70px;
+        h1, h2 {
+          font-size: 70px;
+        }
+      }
+    }
+  }
+}
+.kl-presentation-img {
+  margin-bottom: 39px;
+  position: relative;
+  opacity: 0.7;
+  > span {
+    display: none;
+    margin-bottom: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    text-align: right;
+  }
+  img {
+    max-height: 187px;
+    width: 100%;
+    object-fit: cover;
+  }
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+    opacity: 1;
+    width: 757px;
+    > span {
+      display: block;
+    }
+    img {
+      max-height: 85vh;
+    }
+  }
+}
+.kl-presentation-text {
+  padding: 0 20px;
+  @include media-breakpoint-up(md) {
+    margin-left: 37px;
+    padding: 0;
+    width: 558px;
+    align-self: flex-end;
+  }
+}
+.kl-presentation-text-content {
+  p {
+    margin-bottom: 20px;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+  b, strong {
+    font-weight: $medium;
+  }
+}
+
+.kl-section-contact-home {
+  &.kl-section-contact {
+    @include media-breakpoint-up(md) {
+      background-color: transparent;
+    }
+  }
+  .kl-contact-img {
+    @include media-breakpoint-up(md) {
+      margin-right: -250px;
+      + .kl-contact-content {
+        margin-top: -1px;
+        padding-left: 250px;
+        .kl-contact-title {
+          position: relative;
+          left: -140px;
+          z-index: 1;        
+        }
+      }
+    }
+    @include media-breakpoint-up(xxl) {
+      + .kl-contact-content {
+        .kl-contact-title {
+          left: -165px;
+        }
+      }
+    }
+  }
+  .kl-contact-title {
+    margin-bottom: 94px;
+    @media(max-height: 725px) {
+      margin-bottom: 47px;
+    }
+  }
+  .kl-contact-content-left {
+    @include media-breakpoint-up(md) {
+      padding-left: 84px;
+      padding-right: 84px;
+    }
+  }
+}
